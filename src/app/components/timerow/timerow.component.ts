@@ -4,7 +4,7 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  selector: 'timerow',
+  selector: 'ptc-timerow',
   templateUrl: 'timerow.component.html',
   styleUrls: ['timerow.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'navheader',
+  selector: 'ptc-navheader',
   templateUrl: 'navheader.component.html',
   styleUrls: ['navheader.component.css']
 })
