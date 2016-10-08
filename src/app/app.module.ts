@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { NavheaderComponent } from './components/navheader/navheader.component';
 import { TimerowComponent } from './components/timerow/timerow.component';
+import { MaterialHoverDirective } from './shared/material.hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavheaderComponent,
-    TimerowComponent
+    TimerowComponent,
+    MaterialHoverDirective
   ],
   imports: [
     BrowserModule,
