@@ -1,0 +1,36 @@
+.summary {
+  background-color:white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.summary > h2 {
+  font-size:1.25rem;
+  color: #373a3c;
+  padding:15px;
+  margin:0;
+}
+.summary .card {
+  /*background-color: #373a3c;*/
+  /*color:white;*/
+  padding: auto 0 0 0;
+  margin:0;
+  border-radius: 0;
+  border-bottom:none;
+}
+
+.summary .card:nth-of-type(odd) {
+  background-color: #e2e1e0;
+}
+
+.summary .card-block {
+  padding: 1rem .5rem .5rem .5rem;
+}
+.summary .card-title {
+  text-align:center;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.summary .card-text{
+  text-align:center;
+  letter-spacing: .1rem;
+  padding: .5rem 0 1rem 0;
+}
