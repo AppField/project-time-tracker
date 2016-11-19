@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
   background-color: #e2e1e0;
+  /*margin-top: 40px;*/
+  padding: 0;
 }
