@@ -9,6 +9,7 @@ import { NavheaderComponent } from './components/navheader/navheader.component';
 import { TimerowComponent } from './components/timerow/timerow.component';
 import { MaterialHoverDirective } from './shared/material.hover.directive';
 import { SummaryComponent } from './components/summary/summary.component';
+import { DayselectComponent } from './components/dayselect/dayselect.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     NavheaderComponent,
     TimerowComponent,
     MaterialHoverDirective,
-    SummaryComponent
+    SummaryComponent,
+    DayselectComponent
   ],
   imports: [
     BrowserModule,
