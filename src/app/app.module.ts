@@ -22,7 +22,7 @@ import { SummaryComponent } from './components/summary/summary.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
