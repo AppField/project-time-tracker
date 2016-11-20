@@ -4,7 +4,13 @@
   margin-bottom: 1rem;
 }
 .navbar-brand{
-  padding: .8rem 0;
+  padding: 1rem 0 .8rem 0;
+}
+
+.navbar-brand h1 {
+  font-size:1.25rem;
+  font-weight: lighter;
+  margin:0;
 }
 .navbar .nav-link {
   padding: 1rem;
