@@ -1,42 +1,39 @@
-.timerow {
+
+:host .timerow {
   background-color: white;
   padding-top: .4rem;
   margin-bottom: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.timerow .container-fluid {
-  padding: 0;
-}
-
-.timerow label {
+:host label {
   font-size: 0.8rem;
   margin-bottom:0;
 }
-.timerow .form-control {
+:host .form-control {
   border:0;
   border-bottom: 2px solid #373a3c;
   border-radius:0;
   padding-left:0;
 }
-.timerow input[readonly] {
+:host input[readonly] {
   background:inherit;
 }
 
-.timerow .input-group-addon {
+:host .input-group-addon {
   cursor: pointer;
   background-color:white;
   border:0;
   border-bottom: 2px solid #373a3c;
   border-radius:0;
 }
-.timerow .inner-container .row div[class*=' col-']:first-of-type {
+:host .inner-container .row div[class*=' col-']:first-of-type {
   padding-left:0;
 }
-.timerow .inner-container .row div[class*=' col-']:last-of-type{
+:host .inner-container .row div[class*=' col-']:last-of-type{
   padding-right:0;
 }
-ngb-timepicker >>> .form-control {
+:host ngb-timepicker >>> .form-control {
   text-align: center;
   border:0;
   border-bottom: 2px solid #373a3c;
@@ -44,22 +41,22 @@ ngb-timepicker >>> .form-control {
   padding-left:0;
   padding-right:0;
 }
-ngb-timepicker[readonlyInputs='true'] >>> .form-control{
+:host ngb-timepicker[readonlyInputs='true'] >>> .form-control{
   background-color: inherit;
 }
 
 
-.custom-day {
+:host .custom-day {
   text-align: center;
   padding: 0.185rem 0.25rem;
   border-radius: 0.25rem;
   display: inline-block;
   width: 2rem;
 }
-.custom-day:hover {
+:host .custom-day:hover {
   background-color: #e6e6e6;
 }
-.weekend {
+:host .weekend {
   background-color: #f0ad4e;
   border-radius: 1rem;
   color: white;

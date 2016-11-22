@@ -1,16 +1,14 @@
 :host.fullsize {
-  top:0;
-  height:100%;
-
-  transition: top 1s ease;
+  top: 0;
+  height: 100%;
 }
 
 :host {
-  position:absolute;
+  position: absolute;
   top: 56px;
-  width:100%;
-  z-index:100;
-  transition: top 1s ease, z-index 1s ease;
+  width: 100%;
+  z-index: 100;
+  transition: top 0.3s ease;
 }
 
 :host .controls-container {
@@ -77,7 +75,7 @@
 
 /* Datepicker Drop Down */
 
-:host >>> .dropdown-menu {
+:host /deep/ .dropdown-menu {
   left: 0 !important;
   width: 100%;
   border: none;
@@ -85,10 +83,10 @@
   margin-top: -12px;
 }
 
-:host >>> .dropdown-menu {
-  height:100%;
+:host /deep/ .dropdown-menu {
+  height: 100%;
 }
 
-:host >>> table {
+:host /deep/ table {
   width: 100%;
 }
