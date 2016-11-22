@@ -1,3 +1,23 @@
-<p>
-  dayselect works!
-</p>
+<div class="controls-container">
+  <button type="button">
+    <i class="fa fa-angle-left"></i>
+  </button>
+  <div class="text" (click)="d.toggle(); enableFullsize()">
+    <div class="dropdown">
+      23.
+    </div>
+    <div class="dropdown">
+      November
+    </div>
+    <div class="dropdown">
+      2016
+    </div>
+  </div>
+  <button type="button">
+    <i class="fa fa-angle-right"></i>
+  </button>
+</div>
+
+<div class="dropdown-container">
+  <input name="dp" [(ngModel)]="model" #d="ngbDatepicker" ngbDatepicker [navigation]="'none'"/>
+</div>
