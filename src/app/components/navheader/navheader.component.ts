@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavheaderComponent implements OnInit {
   date: Date = new Date();
+  menuActive: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  activateMenu() {
+    this.menuActive = !this.menuActive;
   }
 
 }

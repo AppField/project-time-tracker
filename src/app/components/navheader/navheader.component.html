@@ -1,5 +1,10 @@
 <nav class="navbar navbar-full navbar-dark bg-inverse">
   <div class="container">
+    <button type="button" class="hamburger hamburger--arrow" (click)="activateMenu()" [ngClass]="{'is-active': menuActive}">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
     <a class="navbar-brand" href="#"><h1>Project Time Calculator</h1></a>
     <div class="nav navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>

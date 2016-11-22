@@ -1,17 +1,47 @@
 :host .navbar {
-  padding:0;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  z-index:100;
+  padding: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 100;
 }
-:host .navbar-brand{
+/* HAMBURGER STYLES */
+:host .hamburger {
+  float: left;
+  padding-left: 0;
+  outline: none;
+}
+
+:host .hamburger-inner {
+  margin-top: 0;
+}
+
+:host .hamburger-inner, :host .hamburger-inner:before, :host .hamburger-inner:after {
+  background-color: #e2e1e0;
+}
+
+@media(min-width: 576px) {
+  :host .hamburger {
+    display:none;
+  }
+}
+
+@media(max-width: 576px) {
+  :host .navbar-nav{
+    display:none;
+  }
+}
+
+/* END HAMBURGER STYLES */
+
+:host .navbar-brand {
   padding: 1rem 0 .8rem 0;
 }
 
 :host .navbar-brand h1 {
-  font-size:1.25rem;
+  font-size: 1.25rem;
   font-weight: lighter;
-  margin:0;
+  margin: 0;
 }
+
 :host .navbar .nav-link {
   padding: 1rem;
   margin-left: 0;
@@ -21,6 +51,7 @@
   -o-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
 }
+
 :host .navbar .nav-link:hover {
-  background-color: hsl(204,4%,33%);
+  background-color: hsl(204, 4%, 33%);
 }
