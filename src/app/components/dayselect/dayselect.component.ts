@@ -14,13 +14,12 @@ export class DayselectComponent implements OnInit  {
 
   @HostBinding('class.fullsize') fullsizeMode = false;
 
-  constructor(config: NgbDatepickerConfig) {
-    // config.outsideDays = 'hidden';f
+  constructor() {
+
   }
 
   enableFullsize() {
     this.fullsizeMode = !this.fullsizeMode;
-    console.log(this.fullsizeMode);
   }
 
   isWeekend(date: NgbDateStruct) {
