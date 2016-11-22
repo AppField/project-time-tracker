@@ -1,6 +1,9 @@
 :host.fullsize {
   transform: translateY(-56px);
 }
+:host.sticky {
+  position: fixed;
+}
 
 :host {
   position: absolute;

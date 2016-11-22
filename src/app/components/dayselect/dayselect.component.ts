@@ -1,6 +1,5 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, OnInit, HostBinding, HostListener} from '@angular/core';
 import { NgbDatepickerConfig, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import fullyResolved = webdriver.promise.fullyResolved;
 
 
 @Component({
@@ -13,6 +12,11 @@ export class DayselectComponent implements OnInit  {
   model:  NgbDateStruct;
 
   @HostBinding('class.fullsize') fullsizeMode = false;
+  @HostBinding('class.sticky') sticky = false;
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event) {
+    console.log(event.srcElement.scrollingElement.scrollTop);
+  }
 
   constructor() {
 
