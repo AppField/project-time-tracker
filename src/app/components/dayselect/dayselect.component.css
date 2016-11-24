@@ -3,6 +3,7 @@
 }
 :host.sticky {
   position: fixed;
+  top:0;
 }
 
 :host {
