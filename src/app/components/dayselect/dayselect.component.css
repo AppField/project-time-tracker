@@ -1,9 +1,13 @@
 :host.fullsize {
   transform: translateY(-56px);
+  height: 100%;
 }
 :host.sticky {
   position: fixed;
   top:0;
+}
+:host.fullsize.sticky {
+  transform: translateY(0);
 }
 
 :host {

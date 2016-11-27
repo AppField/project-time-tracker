@@ -1,5 +1,6 @@
 import {Component, OnInit, HostBinding, HostListener, ElementRef} from '@angular/core';
-import { NgbDatepickerConfig, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepicker} from "@ng-bootstrap/ng-bootstrap/datepicker/datepicker";
 
 
 @Component({
@@ -8,29 +9,32 @@ import { NgbDatepickerConfig, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['dayselect.component.css'],
   providers: [NgbDatepickerConfig]
 })
-export class DayselectComponent implements OnInit  {
-  model:  NgbDateStruct;
+export class DayselectComponent implements OnInit {
+  model: NgbDateStruct;
 
   private offsetTop: number;
 
   @HostBinding('class.fullsize') fullsizeMode = false;
   @HostBinding('class.sticky') sticky = false;
+
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     let windowTop = event.srcElement.scrollingElement.scrollTop;
-
-    this.sticky = windowTop> this.offsetTop;
-
+    this.sticky = windowTop > this.offsetTop;
   }
 
   constructor(elementRef: ElementRef) {
     this.offsetTop = elementRef.nativeElement.offsetTop;
-    console.log(this.offsetTop);
   }
 
-  enableFullsize():void {
-    if(!this.sticky) {
-      this.fullsizeMode = !this.fullsizeMode;
+  enableFullsize(event): void {
+    this.fullsizeMode = !this.fullsizeMode;
+    // TODO: replace with angular-way method: hide scrollbars.
+    if (this.fullsizeMode) {
+      event.srcElement.ownerDocument.scrollingElement.style.overflow = 'hidden';
+    }
+    else {
+      event.srcElement.ownerDocument.scrollingElement.style.overflow = 'auto';
     }
   }
 
@@ -42,6 +46,7 @@ export class DayselectComponent implements OnInit  {
   isDisabled(date: NgbDateStruct, current: {month: number}) {
     return date.month !== current.month;
   }
+
   ngOnInit() {
   }
 
