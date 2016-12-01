@@ -18,6 +18,6 @@
   </button>
 </div>
 
-<div class="dropdown-container">
+<div #dropdownContainer class="dropdown-container" [ngClass]="{'expand': fullsizeMode}">
   <input name="dp" [(ngModel)]="model" #d="ngbDatepicker" ngbDatepicker [navigation]="'none'"/>
 </div>

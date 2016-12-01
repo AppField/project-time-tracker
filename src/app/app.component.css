@@ -1,8 +1,8 @@
 @media (max-width: 543px) {
-  :host .container-fluid {
+  :host > .container-fluid {
     padding:0;
   }
 }
-:host .container-fluid {
+:host > .container-fluid {
   margin-top: 4rem;
 }
