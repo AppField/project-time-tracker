@@ -19,8 +19,8 @@
 </div>
 
 <div class="dropdown-container" [ngClass]="{'expand': fullsize}">
-  <label for="ptc-dp" class="sr-only">Project Day</label>
-  <input name="dp" id="ptc-dp" [(ngModel)]="selectedDay" #d="ngbDatepicker" ngbDatepicker
+  <label for="ptt-dp" class="sr-only">Project Day</label>
+  <input name="dp" id="ptt-dp" [(ngModel)]="selectedDay" #d="ngbDatepicker" ngbDatepicker
          [dayTemplate]="customDay" [navigation]="'none'"/>
 
   <template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled">

@@ -3,7 +3,7 @@ import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  selector: 'ptc-dayselect',
+  selector: 'ptt-dayselect',
   templateUrl: 'dayselect.component.html',
   styleUrls: ['dayselect.component.css'],
   providers: [NgbDatepickerConfig]
