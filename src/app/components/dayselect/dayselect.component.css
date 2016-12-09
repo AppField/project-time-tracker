@@ -137,7 +137,11 @@
   color: white;
   font-size: 1.25rem;
   height: 50px;
-  /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+:host /deep/ .month table tbody tr:nth-of-type(2) .day .custom-day{
+  margin-top: 5px;
 }
 
 :host /deep/ .month .weekday {
@@ -150,19 +154,37 @@
   font-size: 1.2em;
   height: 14%;
 }
-:host /deep/ .month table tbody tr .day div {
+:host /deep/ .month table tbody tr .day .custom-day {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   transition: background-color 0.3s;
 }
-:host /deep/ .month table tbody tr .day div:hover {
+:host /deep/ .month table tbody tr .day .custom-day:hover {
   background-color: #e2e1e0;
+  border-radius:4px;
   transition: background-color 0.3s ease-in;
 }
-:host /deep/ .month table tbody tr .day div:focus {
+:host /deep/ .month table tbody tr .day .custom-day:focus {
   background-color: #373a3c;
   color:white;
   transition: background-color 0.3s, color 0.3s;
+}
+
+:host /deep/ .month table tbody tr .day .custom-day.bg-primary {
+  background-color: #373a3c !important;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+}
+
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
 }
