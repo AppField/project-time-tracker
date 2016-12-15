@@ -33,7 +33,7 @@ export class DayselectComponent implements OnInit {
     this.navMonth = today.getMonth();
   }
 
-  toggleFullsize(datepicker: NgbDatepicker): void {
+  toggleFullsize(): void {
     this.fullsize = !this.fullsize;
     // TODO: replace with angular-way method: hide scrollbars.
     if (this.fullsize) {

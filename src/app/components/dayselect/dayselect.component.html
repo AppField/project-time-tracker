@@ -24,7 +24,7 @@
          [dayTemplate]="customDay" [navigation]="'none'"/>
 
   <template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled">
-  <span class="custom-day" [class.bg-primary]="selected" (click)="toggleFullsize(d)"
+  <span class="custom-day" [class.bg-primary]="selected" (click)="toggleFullsize()"
         [class.text-muted]="disabled">
   {{ date.day }}
   </span>
