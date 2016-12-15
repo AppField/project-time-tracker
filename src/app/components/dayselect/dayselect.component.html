@@ -1,0 +1,33 @@
+<div class="controls-container">
+  <button type="button" (click)="previous(d)">
+    <i class="fa fa-angle-left"></i>
+  </button>
+  <div class="text" (click)="d.toggle(); toggleFullsize($event)">
+    <div class="dropdown">
+      {{selectedDay.day}}.
+    </div>
+    <div class="dropdown">
+      {{ navMonth | month:navMonth }}
+    </div>
+    <div class="dropdown">
+      {{ navYear }}
+    </div>
+  </div>
+  <button type="button" (click)="next(d);">
+    <i class="fa fa-angle-right"></i>
+  </button>
+</div>
+
+<div class="dropdown-container" [ngClass]="{'expand': fullsize}">
+  <label for="ptt-dp" class="sr-only">Project Day</label>
+  <input name="dp" id="ptt-dp" [(ngModel)]="selectedDay" #d="ngbDatepicker" ngbDatepicker
+         [dayTemplate]="customDay" [navigation]="'none'"/>
+
+  <template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled">
+  <span class="custom-day" [class.bg-primary]="selected" (click)="toggleFullsize(d)"
+        [class.text-muted]="disabled">
+  {{ date.day }}
+  </span>
+  </template>
+
+</div>

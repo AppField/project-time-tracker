@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ptc-summary',
+  selector: 'ptt-summary',
   templateUrl: 'summary.component.html',
   styleUrls: ['summary.component.css']
 })

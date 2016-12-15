@@ -1,0 +1,190 @@
+:host.fullsize {
+  background-color: #373a3c;
+  color: white;
+  transform: translateY(-56px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:host.sticky {
+  position: fixed;
+  top: 0;
+}
+
+:host.fullsize.sticky {
+  transform: translateY(0);
+}
+
+:host {
+  background-color: white;
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  z-index: 100;
+  transition: transform 0.3s ease-in, background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+:host .controls-container {
+  display: flex;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+:host.fullsize .controls-container {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+:host .text {
+  flex-grow: 4;
+  display: flex;
+  font-size: 1.25rem;
+  padding: .5rem 0;
+}
+
+:host .text, :host button {
+  background-color: inherit;
+  color: inherit;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+:host .text:hover, :host button:hover {
+  color: #373a3c;
+  cursor: pointer;
+  background-color: #e2e1e0;
+}
+
+:host .text div {
+  flex-grow: 1;
+  padding: 0 1rem;
+}
+
+@media (max-width: 350px) {
+  :host .text span {
+    display: block;
+  }
+}
+
+:host button {
+  flex-grow: 3;
+  font-size: 1.25rem;
+  padding: .5rem 0;
+  border: none;
+}
+
+:host button:focus {
+  outline: none;
+}
+
+:host .dropdown-container {
+  flex-grow: 0.001;
+  position: relative;
+  flex-shrink: 0;
+  overflow: auto;
+  transition: flex-grow 0.3s;
+}
+
+:host.fullsize .dropdown-container.expand {
+  flex-grow: 1;
+  transition: flex-grow 0.3s;
+}
+
+:host input[name="dp"] {
+  display: block;
+  border: none;
+  height: 0;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Datepicker Drop Down */
+
+:host /deep/ .dropdown-menu {
+  height: 100%;
+  top: 0;
+  left: 0 !important;
+  width: 100%;
+  padding-top: 0;
+  border: none;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+:host /deep/ .dropdown-menu {
+  padding: 0 !important;
+}
+
+:host /deep/ .dropdown-container table {
+  width: 100%;
+  height: 100%;
+}
+
+/* hide standard month text */
+:host /deep/ > div.dropdown-container > ngb-datepicker > table > tbody > tr:nth-child(1) {
+  display: none;
+}
+
+:host /deep/ .month {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+:host /deep/ .month table tbody tr:first-of-type {
+  background-color: #373a3c;
+  color: white;
+  font-size: 1.25rem;
+  height: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+:host /deep/ .month table tbody tr:nth-of-type(2) .day .custom-day{
+  margin-top: 5px;
+}
+
+:host /deep/ .month .weekday {
+  font-size: 1.1em;
+  font-weight: normal;
+  height: auto;
+}
+
+:host /deep/ .month table tbody tr .day {
+  font-size: 1.2em;
+  height: 14%;
+}
+:host /deep/ .month table tbody tr .day .custom-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+:host /deep/ .month table tbody tr .day .custom-day:hover {
+  background-color: #e2e1e0;
+  border-radius:4px;
+  transition: background-color 0.3s ease-in;
+}
+:host /deep/ .month table tbody tr .day .custom-day:focus {
+  background-color: #373a3c;
+  color:white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:host /deep/ .month table tbody tr .day .custom-day.bg-primary {
+  background-color: #373a3c !important;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+}
+
+.weekend {
+  background-color: #f0ad4e;
+  border-radius: 1rem;
+  color: white;
+}
+.hidden {
+  display: none;
+}

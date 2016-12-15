@@ -4,7 +4,7 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  selector: 'ptc-timerow',
+  selector: 'ptt-timerow',
   templateUrl: 'timerow.component.html',
   styleUrls: ['timerow.component.css']
 })
@@ -18,10 +18,5 @@ export class TimerowComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  isWeekend(date: NgbDateStruct) {
-    const d = new Date(date.year, date.month, date.day);
-    return d.getDay() === 0 || d.getDay() === 6;
   }
 }

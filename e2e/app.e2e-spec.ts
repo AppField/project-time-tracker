@@ -1,10 +1,10 @@
-import { ProjectTimeCalculatorPage } from './app.po';
+import { ProjectTimeTrackerPage } from './app.po';
 
-describe('project-time-calculator App', function() {
-  let page: ProjectTimeCalculatorPage;
+describe('project-time-tracker App', function() {
+  let page: ProjectTimeTrackerPage;
 
   beforeEach(() => {
-    page = new ProjectTimeCalculatorPage();
+    page = new ProjectTimeTrackerPage();
   });
 
   it('should display message saying app works', () => {

@@ -3,7 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: ProjectTimeCalculator', () => {
+describe('App: ProjectTimeTracker', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
