@@ -1,32 +1,9 @@
 <div class="container-fluid timerow">
   <div class="row" style="padding-left:.5rem; padding-right:.5rem;">
-    <div class="col-xs-12 col-md-4">
-      <div class="container-fluid inner-container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-              <label for="workingDay">Working Day</label>
-              <form class="form-inline">
-                <div class="form-group">
-                  <div class="input-group">
-                    <input id="workingDay" class="form-control" placeholder="dd.mm.yy" name="dp" [(ngModel)]="model"
-                           ngbDatepicker
-                           #d="ngbDatepicker">
-                    <div class="input-group-addon" (click)="d.toggle()">
-                      <i class="fa fa-calendar" style="width: 1.2rem;"></i>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <div class="form-group">
-              <label for="project">Project</label>
-              <input id="project" class="form-control" type="text" placeholder="Project"/>
-            </div>
-          </div>
-        </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="form-group">
+        <label for="project">Project</label>
+        <input id="project" class="form-control" type="text" placeholder="Project"/>
       </div>
     </div>
     <div class="col-xs-12 col-md-6">
@@ -35,7 +12,7 @@
           <div class="col-xs-6 col-sm-3">
             <div class="form-group">
               <label for="from">From</label>
-              <ngb-timepicker class="material" id="from" [(ngModel)]="from" [spinners]="false"></ngb-timepicker>
+              <ngb-timepicker id="from" [(ngModel)]="from" [spinners]="false"></ngb-timepicker>
             </div>
           </div>
           <div class="col-xs-6 col-sm-3">
@@ -61,7 +38,7 @@
     </div>
     <!--<div class="col-xs-12 col-md-1">-->
     <!--</div>-->
-    <div class="col-xs-12 col-md-2">
+    <div class="col-xs-12 col-md-3">
       <div class="form-group">
         <label for="comment">Comment</label>
         <input id="comment" class="form-control" type="text" placeholder="Comment"/>
