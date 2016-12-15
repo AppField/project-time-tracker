@@ -1,5 +1,7 @@
-import {Component, OnInit, HostBinding, HostListener, ElementRef} from '@angular/core';
+import {Component, OnInit, HostBinding, HostListener, ElementRef, ViewChild} from '@angular/core';
 import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepicker} from "@ng-bootstrap/ng-bootstrap/datepicker/datepicker";
+import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap/datepicker/datepicker-input";
 
 
 @Component({
@@ -10,8 +12,10 @@ import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 })
 export class DayselectComponent implements OnInit {
   selectedDay: NgbDateStruct;
+  navYear: number;
 
   private offsetTop: number;
+  private navMonth: number; // contains javascript index month numbers. (0 indexed)
   @HostBinding('class.fullsize') fullsize = false;
   @HostBinding('class.sticky') sticky = false;
 
@@ -24,46 +28,72 @@ export class DayselectComponent implements OnInit {
   constructor(elementRef: ElementRef) {
     this.offsetTop = elementRef.nativeElement.offsetTop;
     let today = new Date();
-    this.selectedDay = { day: today.getDate(), month: today.getMonth() +1, year: today.getFullYear() };
+    this.selectedDay = {day: today.getDate(), month: today.getMonth() + 1, year: today.getFullYear()};
+    this.navYear = today.getFullYear();
+    this.navMonth = today.getMonth();
   }
 
-
-  toggleFullsize(): void {
+  toggleFullsize(datepicker: NgbDatepicker): void {
     this.fullsize = !this.fullsize;
     // TODO: replace with angular-way method: hide scrollbars.
     if (this.fullsize) {
       document.getElementsByTagName("body")[0].style.overflow = 'hidden';
+      this.navYear = this.selectedDay.year;
+      this.navMonth = this.selectedDay.month - 1;
     }
     else {
       document.getElementsByTagName("body")[0].style.overflow = 'auto';
     }
   }
 
-  nextDay(): void {
-    let newDate = new Date();
-    newDate.setMonth(this.selectedDay.month -1);
-    newDate.setFullYear(this.selectedDay.year);
-    newDate.setDate(this.selectedDay.day + 1);
+  next(datepicker: NgbDatepicker): void {
+    if (this.fullsize) {
+      // next month
+      if (this.navMonth == 11) {
+        this.navMonth = 0;
+        this.navYear++;
+      }
+      else {
+        this.navMonth++;
+      }
+      datepicker.navigateTo({year: this.navYear, month: this.navMonth + 1});
+    }
+    else {
+      // next day
+      let newDate = new Date();
+      newDate.setMonth(this.navMonth);
+      newDate.setFullYear(this.navYear);
+      newDate.setDate(this.selectedDay.day + 1);
 
-    this.selectedDay = { day: newDate.getDate(), month: newDate.getMonth() +1, year: newDate.getFullYear() };
+      if (this.navMonth != newDate.getMonth()) this.navMonth = newDate.getMonth();
+      this.selectedDay = {day: newDate.getDate(), month: this.navMonth + 1, year: newDate.getFullYear()};
+      this.navYear = this.selectedDay.year;
+    }
   }
 
-  previousDay(): void {
-    let newDate = new Date();
-    newDate.setMonth(this.selectedDay.month -1);
-    newDate.setFullYear(this.selectedDay.year);
-    newDate.setDate(this.selectedDay.day -1);
+  previous(datepicker: NgbDatepicker): void {
+    if (this.fullsize) {
+      // previous month
+      if (this.navMonth == 0) {
+        this.navMonth = 11;
+        this.navYear--;
+      }
+      else {
+        this.navMonth--;
+      }
+      datepicker.navigateTo({year: this.navYear, month: this.navMonth + 1});
+    }
+    else {
+      // previous day
+      let newDate = new Date();
+      newDate.setMonth(this.navMonth);
+      newDate.setFullYear(this.selectedDay.year);
+      newDate.setDate(this.selectedDay.day - 1);
 
-    this.selectedDay = { day: newDate.getDate(), month: newDate.getMonth() +1, year: newDate.getFullYear() };
-  }
-
-  isWeekend(date: NgbDateStruct) {
-    const d = new Date(date.year, date.month - 1, date.day);
-    return d.getDay() === 0 || d.getDay() === 6;
-  }
-
-  isDisabled(date: NgbDateStruct, current: {month: number}) {
-    return date.month !== current.month;
+      if (this.navMonth != newDate.getMonth()) this.navMonth = newDate.getMonth();
+      this.selectedDay = {day: newDate.getDate(), month: this.navMonth + 1, year: newDate.getFullYear()};
+      this.navYear = this.selectedDay.year;
+    }
   }
 
   ngOnInit() {
