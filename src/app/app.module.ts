@@ -11,6 +11,7 @@ import { MaterialHoverDirective } from './shared/material.hover.directive';
 import { SummaryComponent } from './components/summary/summary.component';
 import { DayselectComponent } from './components/dayselect/dayselect.component';
 import { MonthPipe } from './components/dayselect/month.pipe';
+import {IndexeddbService} from "./services/indexeddb.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { MonthPipe } from './components/dayselect/month.pipe';
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [IndexeddbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
