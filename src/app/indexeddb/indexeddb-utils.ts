@@ -1,4 +1,6 @@
-class IndexedDBUtils {
+import {DbMode} from "./indexeddb-dbmode.interface";
+
+export class IndexedDBUtils {
   dbMode: DbMode;
   indexedDB: IDBFactory;
 

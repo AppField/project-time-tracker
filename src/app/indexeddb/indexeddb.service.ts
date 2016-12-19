@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import {IndexeddbWrapper} from "./indexeddb-wrapper";
-
+import { IndexedDBUtils } from "./indexeddb-utils";
 
 @Injectable()
 export class IndexeddbService {
