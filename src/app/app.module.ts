@@ -11,7 +11,7 @@ import { MaterialHoverDirective } from './shared/material.hover.directive';
 import { SummaryComponent } from './components/summary/summary.component';
 import { DayselectComponent } from './components/dayselect/dayselect.component';
 import { MonthPipe } from './components/dayselect/month.pipe';
-import {IndexeddbService} from "./services/indexeddb.service";
+import { IndexeddbService } from "./indexeddb/indexeddb.service";
 
 @NgModule({
   declarations: [
